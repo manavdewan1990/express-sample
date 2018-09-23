@@ -38,4 +38,17 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+var https = require('http');
+var server = https.createServer(app).listen(8181, function() {
+    console.log('Https App started');
+});
+/*
+var http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World\n');
+}).listen(8181, 'localhost');
+console.log('Server running at http://APP_PRIVATE_IP_ADDRESS:8080/');
+*/
+
 module.exports = app;
